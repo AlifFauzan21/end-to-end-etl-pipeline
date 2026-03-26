@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  # Container 1: Database PostgreSQL
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: developer
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: booksdb
+    ports:
+      - "5432:5432"
+
+  # Container 2: Aplikasi ETL Lu
+  etl_app:
+    build: .
+    depends_on:
+      - db
+    environment:
+      # Perhatiin: host-nya sekarang 'db', bukan 'localhost' lagi!
+      - DB_URL=postgresql://developer:password@db:5432/booksdb
+      - SPREADSHEET_ID=1Bmo9MfeYrNPLwuj_SRcC4DTxJBThptaT4LBBr7psfSQ

@@ -1,0 +1,11 @@
+# Cara menjalankan skrip ETL pipeline
+python3 main.py
+
+# Cara menjalankan unit test pada skrip
+python3 -m pytest tests/
+
+# Cara menjalankan test coverage
+PYTHONPATH=. pytest --cov=utils tests/
+
+# Url Google Sheets:
+https://docs.google.com/spreadsheets/d/1Bmo9MfeYrNPLwuj_SRcC4DTxJBThptaT4LBBr7psfSQ/edit?usp=sharing

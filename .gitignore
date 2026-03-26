@@ -1,0 +1,9 @@
+# Folder sampah & Virtual Env
+venv/
+__pycache__/
+.pytest_cache/
+.coverage
+
+# KUNCI RAHASIA (HARAM DI-PUSH!)
+google-sheets-api.json
+.env
